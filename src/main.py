@@ -7,13 +7,13 @@ import torch.optim as optim
 import time
 import torch
 
-data_path = './data/letter/'
-n_epochs = 1
+data_path = './data/letter'
+n_epochs = 100
 
 device = 'cuda'
 lr = 0.001
 weight_decay = 0.0001
-batch_size=32
+batch_size = 32
 
 def main():
     trainset = Dataset(root=data_path+'/train/')
@@ -78,11 +78,11 @@ def test(dataset: BaseADDataset, ae_net: BaseNet):
     start_time = time.time()
 
     with torch.no_grad():
-        i=0
+        i = 0
         for data, label in zip(letter, labels):
-            i+=1
-            inputs, _, _ = data
-            lab, _, _ = label
+            i += 1
+            inputs, _ = data
+            lab, _ = label
             inputs = inputs.to(device)
             lab = lab.to(device)
             # Zero the network parameter gradients

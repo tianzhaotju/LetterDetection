@@ -15,7 +15,7 @@ numpy==1.15.2
 olefile==0.46
 opencv-python==4.2.0.34
 pandas==0.23.4
-Pillow==7.0.0
+Pillow==7.1.2
 pyparsing==2.3.0
 python-dateutil==2.7.5
 pytils==0.3
